@@ -1,0 +1,101 @@
+import { http, HttpResponse, delay } from "msw";
+
+export const handlers = [
+  http.get("/api/products", async () => {
+    // await delay(5000); // Skeleton testing delay
+    return HttpResponse.json([
+      {
+        id: 1,
+        name: "Vitamin C 1000 mg",
+        description: "Immune booster tablets",
+        price: 12.99,
+        oldPrice: 15.99,
+        discount: 20,
+        rating: 4,
+        reviews: 34,
+        image: "https://picsum.photos/seed/vitaminc/300/200",
+      },
+      {
+        id: 2,
+        name: "Omega-3 Fish Oil",
+        description: "For heart and brain health",
+        price: 18.5,
+        oldPrice: 22.0,
+        discount: 15,
+        rating: 4,
+        reviews: 18,
+        image: "https://picsum.photos/seed/omega3/300/200",
+      },
+      {
+        id: 3,
+        name: "Multivitamin Complex",
+        description: "Daily essential vitamins",
+        price: 22.0,
+        oldPrice: 26.0,
+        discount: 15,
+        rating: 5,
+        reviews: 52,
+        image: "https://picsum.photos/seed/multivitamin/300/200",
+      },
+      {
+        id: 4,
+        name: "Probiotic Capsules",
+        description: "Digestive health support",
+        price: 19.9,
+        oldPrice: 23.0,
+        discount: 10,
+        rating: 4,
+        reviews: 26,
+        image: "https://picsum.photos/seed/probiotic/300/200",
+      },
+      {
+        id: 5,
+        name: "Sunscreen SPF50+",
+        description: "High protection sun cream",
+        price: 14.99,
+        oldPrice: 18.99,
+        discount: 20,
+        rating: 5,
+        reviews: 40,
+        image: "https://picsum.photos/seed/sunscreen/300/200",
+      },
+      {
+        id: 6,
+        name: "Gentle Cleanser",
+        description: "Daily facial cleansing gel",
+        price: 9.99,
+        oldPrice: 12.99,
+        discount: 10,
+        rating: 4,
+        reviews: 12,
+        image: "https://picsum.photos/seed/cleanser/300/200",
+      },
+      {
+        id: 7,
+        name: "Moisturizing Cream",
+        description: "Hydrates and nourishes skin",
+        price: 16.5,
+        oldPrice: 20.0,
+        discount: 18,
+        rating: 5,
+        reviews: 41,
+        image: "https://picsum.photos/seed/moisturizer/300/200",
+      },
+      {
+        id: 8,
+        name: "Anti-Aging Serum",
+        description: "Reduces wrinkles and fine lines",
+        price: 29.99,
+        oldPrice: 35.99,
+        discount: 15,
+        rating: 4,
+        reviews: 28,
+        image: "https://picsum.photos/seed/serum/300/200",
+      },
+    ]);
+  }),
+
+  http.get("/api/cart", () => {
+    return HttpResponse.json([]);
+  }),
+];
