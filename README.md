@@ -1,12 +1,43 @@
-# React + Vite
+Git Workflow
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1. Main branches
 
-Currently, two official plugins are available:
+master → production-ready code only.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+dev → integration branch where you merge features before they’re polished for main.
 
-## Expanding the ESLint configuration
+2. Feature branches
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Branch off dev for new work.
+
+Naming convention:
+
+feature/<short-description> → new features
+
+e.g. feature/cart-page, feature/checkout-api
+
+fix/<short-description> → bug fixes
+
+e.g. fix/cart-badge-count, fix/navbar-responsiveness
+
+chore/<short-description> → maintenance / configs
+
+e.g. chore/setup-eslint, chore/deploy-config
+
+3. Workflow
+
+Start new work → git checkout -b feature/cart-page dev
+
+Work + commit → push branch to remote
+
+When ready → open a PR/MR into dev
+
+After testing/staging → merge dev → main for production
+
+4. Optional hotfixes
+
+If something is broken in production (master), branch from main:
+
+hotfix/fix-login-crash
+
+Then merge into both main and dev so they stay in sync.
