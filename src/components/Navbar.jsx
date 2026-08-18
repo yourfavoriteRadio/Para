@@ -19,7 +19,7 @@ export default function Navbar() {
           <div className="flex items-center space-x-2">
             <HeartIcon className="h-7 w-7 text-blue-300" />
             <Link to="/" className="text-xl font-bold">
-              <span className="text-blue-300">Raouaa</span> ParaPharma
+              <span className="text-blue-300">Ghassen</span> Para
             </Link>
           </div>
 
